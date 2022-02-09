@@ -11,9 +11,8 @@ const ScoreList = () => {
   const changeHandler = (event) => {
     setSearchTerm(event.target.value);
 
-    const filteredScore = rawScoreData.filter((scoreData) => {
-      const fullName =
-        `{scoreData.firstName} + {scoreData.lastName}`.toLowerCase();
+    const filteredScore = rawScoreData.filter(({ firstName, lastName }) => {
+      const fullName = (firstName + lastName).toLowerCase();
       return fullName.includes(searchTerm.toLowerCase());
     });
 
