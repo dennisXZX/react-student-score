@@ -12,7 +12,7 @@ const ScoreList = () => {
     setSearchTerm(event.target.value);
 
     const filteredScore = rawScoreData.filter(({ firstName, lastName }) => {
-      const fullName = (firstName + lastName).toLowerCase();
+      const fullName = `${firstName}${lastName}`.toLowerCase();
       return fullName.includes(searchTerm.toLowerCase());
     });
 
